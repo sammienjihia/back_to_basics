@@ -4,6 +4,8 @@
 # If the search key is less than the item in the middle of the interval narrow your search to the lower half
 # otherwise narrow it to the upper half. Repeat check until the value is found or the interval is empty
 
+# Method 1: Recursive
+
 def binary_search(arrayItem, searchKey, startIndex, endIndex):
 
 	# Sort array item
@@ -35,8 +37,43 @@ def binary_search(arrayItem, searchKey, startIndex, endIndex):
 		return -1
 
 
+# Method 2 Iterative
+
+def binary_search2(arrayItem, searchKey, startIndex, endIndex):
+
+	# Sort array item
+	arrayItem.sort()
+
+	while startIndex<=endIndex:
+
+		midIndex = int((startIndex+endIndex)/2)
+		if arrayItem[midIndex] == searchKey:
+			return_data = "Found search key {} in this array {} at index {}".format(searchKey, arrayItem, midIndex)
+			return return_data
+		
+		
+
+		elif searchKey>arrayItem[midIndex]:
+			# select the upper bound midIndex+1 becomes the startIndex and the endIndex remains the endIndex
+			startIndex = midIndex +1
+
+		else:
+			# search key is less than the middle index value then select the lower bound. The endIndex becomes 
+			# midIndex-1
+			endIndex = midIndex -1
+
+		pass
+
+
+
+
+		
+
+
 	
 arr = [1,5,9,2,6,4,9,6,2,5]
 
 print (binary_search(arr, 4, 0, len(arr)-1))
+
+print (binary_search2(arr, 4, 0, len(arr)-1))
 
