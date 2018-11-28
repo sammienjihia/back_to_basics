@@ -30,5 +30,10 @@ def jumpSearch(arr, searchKey):
 			
 		
 
-print(jumpSearch([1,3,6,8,10,13,17], 15))
+print(jumpSearch([1,3,6,8,10,13,17], 1))
+"""
+Resources used 
+1. https://www.geeksforgeeks.org/jump-search/
+2. https://www.tutorialspoint.com/Jump-Search
+"""
 
