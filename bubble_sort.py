@@ -19,7 +19,7 @@ Outer iteration 1 (for i in range(0, len(arr)-1)): i is 0
 def bubbleSort(arr):
 	n = len(arr)
 
-	for i in range(0, n-1):
+	for i in range(0, n):
 
 		for k in range(0, n-i-1):
 
@@ -28,4 +28,4 @@ def bubbleSort(arr):
 
 	return arr
 
-print (bubbleSort([1,7,2,5,9,2,4]))
+print (bubbleSort([1,7,2,5,9,2,4, 10, 0]))
