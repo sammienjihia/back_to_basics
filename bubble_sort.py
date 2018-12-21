@@ -2,7 +2,7 @@
 Given list [3,2,8,4,1]
 
 Outer iteration 1 (for i in range(0, len(arr)-1)): i is 0
-	inner iteration (for j in range(0, len(arr)-1-i)) for the first iteration i is 0
+	inner iteration (for j in range(0, len(arr)-1-i)) for the first iteration i is 0. the -1 is to handle the arr index increment
 
 		[3,2,8,4,1]
 
@@ -19,9 +19,9 @@ Outer iteration 1 (for i in range(0, len(arr)-1)): i is 0
 def bubbleSort(arr):
 	n = len(arr)
 
-	for i in range(0, n):
+	for i in range(n):
 
-		for k in range(0, n-i-1):
+		for k in range(n-i-1):
 
 			if arr[k] > arr[k+1]:
 				arr[k], arr[k+1] = arr[k+1], arr[k]

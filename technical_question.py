@@ -83,8 +83,8 @@ def nth_smallest(arr, nth_number):
 
 	
 
-	for i in range(0, len(arr)):
-		for k in range(0, len(arr)-i-1):
+	for i in range(len(arr)):
+		for k in range(len(arr)-i-1):
 			if arr[k] > arr[k+1]:
 				arr[k], arr[k+1] = arr[k+1] , arr[k]
 
