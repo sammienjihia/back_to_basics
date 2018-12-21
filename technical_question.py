@@ -31,3 +31,102 @@ def find_pairs_that_add_up_to(arr, k):
 
 find_pairs_that_add_up_to([1,3,5,3, 2,7,2,6,8,4], 8)
 
+
+# Google way of doing this question: This will not handle duplicate entries in the array
+def find_pair_that_add_up_to2(arr, w):
+	# sort the array
+	n=0
+
+	list_to_hold_tuples = []
+
+	for n in range(0, len(arr)-1):
+		for k in range(0, len(arr)-n-1):
+			if arr[k] > arr[k+1]:
+				arr[k], arr[k+1] = arr[k+1], arr[k] 
+	
+	start_point = 0
+	end_point = len(arr)-1
+
+	while start_point < end_point:
+		
+
+		if (arr[start_point] + arr[end_point]) == w:
+			list_to_hold_tuples.append((arr[start_point],arr[end_point]))
+			end_point = end_point-1
+			
+
+		elif (arr[start_point] + arr[end_point])< w:
+			start_point = start_point +1
+			
+
+
+		elif (arr[start_point] + arr[end_point])> w:
+			end_point = end_point -1
+			
+
+	print(list_to_hold_tuples)
+	print(arr)
+			
+
+print("***************")
+find_pair_that_add_up_to2([1,3,5,3, 2,7,2,6,8,4], 8) 
+
+
+
+"""
+Given an array of unsorted int, find the nth smallest number
+"""
+
+def nth_smallest(arr, nth_number):
+
+	
+
+	for i in range(0, len(arr)-1):
+		for k in range(0, len(arr)-i-1):
+			if arr[k] > arr[k+1]:
+				arr[k], arr[k+1] = arr[k+1] , arr[k]
+
+			
+
+	print(arr[nth_number-1])
+
+
+nth_smallest([3,3,6,8,4,1], 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
