@@ -109,12 +109,14 @@ def find_multiples(arr, k):
 
 """
 given an array of integers that are duplicated evenly except one which is not duplicated, find the number which
-is not duplicated
+is ordley duplicated
 """
 def hash_map(arr):
 
-	counter_list = []
 	hash_dict = {} 
+	ans_list = []
+	# in this dictionary, the key will be the array value at a particular point, and the value will be the 
+	# number of times the array value appears in the array
 
 	for n in range(0, len(arr)):
 		if arr[n] in hash_dict:
@@ -123,9 +125,15 @@ def hash_map(arr):
 		else:
 			hash_dict[arr[n]] = 1
 
+	for key in hash_dict.keys():
+		if hash_dict[key]%2 == 1:
+			ans_list.append(key)
+
+
 
 	print(hash_dict)
 	print(arr[6])
+	print(ans_list)
 		 
 	 	
 

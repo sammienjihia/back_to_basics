@@ -21,6 +21,7 @@ def bubbleSort(arr):
 
 	for i in range(n):
 
+		# the -1 is to handle the k+1 increament, because without it the k+1 will register a IndexError: list index out of range 
 		for k in range(n-i-1):
 
 			if arr[k] > arr[k+1]:
