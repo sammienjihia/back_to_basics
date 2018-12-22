@@ -133,14 +133,54 @@ def hash_map(arr):
 
 	print(hash_dict)
 	print(arr[6])
-	print(ans_list)
-		 
-	 	
-
-
- 	
+	print(ans_list) 	
 
 hash_map([1,2,2,3,3,3,4])
+
+"""
+Given a list of vertices and a vertex w, find the k nearest vertices to vertex w
+"""
+import math
+
+def nearest_vertex(arr, k, given_vertex):
+	
+	# This list shall hold the eucledean distances
+	counter_list = []
+
+	# This dictionary will hold the eauclidean distance as the key and the value will be the vertex
+	hash_map = {}
+
+	# Iterate through the 
+	for n in range(len(arr)):
+		# find the eauclidean distance
+
+		vertex = arr[n]
+
+		x_index = vertex[0]
+		y_index = vertex[1]
+
+		x_index_gv = given_vertex[0]
+		y_index_gv = given_vertex[1]
+
+		# Eauclidean distance sqrt((x1-x2)**2+(y1-y2)**2)
+
+		e_distance = math.sqrt((x_index - x_index_gv)**2 + (y_index - y_index_gv)**2)
+
+		if e_distance in hash_map:
+			pass
+
+		hash_map[e_distance] = vertex
+
+		counter_list.append(e_distance)
+
+
+
+	print(counter_list)
+	print(hash_map)
+
+nearest_vertex([(6,15),(2,3),(5,12),(3,6),(4,9)], 3, (3,6))
+
+
 
 
 
