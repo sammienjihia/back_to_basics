@@ -139,6 +139,9 @@ hash_map([1,2,2,3,3,3,4])
 
 """
 Given a list of vertices and a vertex w, find the k nearest vertices to vertex w
+
+
+NOT COMPLETED
 """
 import math
 
@@ -179,6 +182,44 @@ def nearest_vertex(arr, k, given_vertex):
 	print(hash_map)
 
 nearest_vertex([(6,15),(2,3),(5,12),(3,6),(4,9)], 3, (3,6))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+List comprehension
+Given an array of integers, print the square of all the elements
+"""
+
+def square_elem(arr):
+
+	square = [num*num for num in arr]
+
+	return square
+
+
+print(square_elem([1,2,3,4,5]))
+
+
+"""
+Generators, 
+
+yeild is the key word
+
+iteritems() vs items() in a dictionary
+
+xrange() vs range()
+"""
 
 
 

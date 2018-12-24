@@ -18,3 +18,45 @@ def quick_sort_recursive(lst, start, end):
         quick_sort_recursive(lst, pos + 1, end)
                                           # you don't need to return the list
                                           # it's modified in place
+
+
+# in a given array, get the pivot
+# swap the pivot with the last element of the array
+# get start index and the current index(index at position start_index + 1)
+
+
+def quick_sort(arr):
+
+  # get the mid point of the array
+  mid  = int(len(arr)//2)
+
+  if arr[0] < arr[mid]:
+    if arr[mid] < arr[len(arr)-1]:
+      mid_element = arr[mid]
+
+  mid_element, arr[len(arr)-1] = arr[len(arr)-1], mid_element
+
+  base_index = 0
+  current_index = 1
+
+  for n in range(len(arr)):
+
+    if arr[n] < mid_element:
+      arr[base_index], arr[current_index] = arr[current_index], arr[base_index]
+
+      base_index = base_index + 1
+      current_index = current_index + 1
+
+    elif arr[n] > mid_element:
+       current_index = current_index + 1
+
+    arr[base_index], mid_element = mid_element, arr[base_index]
+
+  print (arr[base_index])
+  print (mid_element)
+  print(arr)
+
+
+quick_sort([1,4,2,6,4,9,5,8])
+
+
