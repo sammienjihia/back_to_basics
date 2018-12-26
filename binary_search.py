@@ -6,6 +6,8 @@
 
 # Method 1: Recursive
 
+# has time complexity of O(log n)
+
 def binary_search(arrayItem, searchKey, startIndex, endIndex):
 
 	# Sort array item
@@ -38,7 +40,7 @@ def binary_search(arrayItem, searchKey, startIndex, endIndex):
 
 
 # Method 2 Iterative
-
+# Time complexity in this function shallbe O(n)
 def binary_search2(arrayItem, searchKey, startIndex, endIndex):
 
 	# Sort array item
