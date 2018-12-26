@@ -184,6 +184,24 @@ def nearest_vertex(arr, k, given_vertex):
 nearest_vertex([(6,15),(2,3),(5,12),(3,6),(4,9)], 3, (3,6))
 
 
+"""
+Given a string, delete any reocurring character and return the new character
+"""
+
+def deleteCharacter(string):
+	character_store = set()
+	outputString = ''
+
+	for char in string:
+		if char not in character_store:
+			character_store.add(char)
+			outputString += char
+
+	return outputString
+
+print(deleteCharacter('saaaammmy mwangi'))
+
+
 
 
 
