@@ -10,3 +10,27 @@ https://github.com/AtotheY/YoutubeTutorials/blob/master/Introductions/linkedList
 
 
 """
+
+
+"""
+In the below code, we've simply created a class that has a value and a nexNode attribute
+"""
+class LinkedList:
+	"""docstring for ClassName"""
+	def __init__(self, value, nextNode=None):
+
+		self.value = value
+		self.nextNode = nextNode
+
+
+# To create a node, we simply pass in a value
+node1 = LinkedList(3)
+node2 = LinkedList(4)
+node3 = LinkedList(5)
+
+# Then we connect the nodes together
+node1.nextNode = node2
+node2.nextNode = node3
+
+print(node3.nextNode)
+		
