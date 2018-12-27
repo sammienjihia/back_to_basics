@@ -27,10 +27,22 @@ class LinkedList:
 node1 = LinkedList(3)
 node2 = LinkedList(4)
 node3 = LinkedList(5)
+node4 = LinkedList(6)
 
 # Then we connect the nodes together
 node1.nextNode = node2
 node2.nextNode = node3
 
-print(node3.nextNode)
+print(node1.nextNode.value)
+
+currentNode = node1
+while True:
+	print(currentNode.value)
+	print("-->")
+
+	if currentNode.nextNode == None:
+		print("None")
+		break
+
+	currentNode = currentNode.nextNode
 		
