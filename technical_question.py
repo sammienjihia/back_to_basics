@@ -1,4 +1,23 @@
 """
+More resources can be found at : https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0
+
+
+HackerRank videos, cracking the coding interview; https://www.youtube.com/watch?v=7ArHz8jPglw&index=2&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX
+
+Top job interview questions: https://www.monster.com/career-advice/article/100-potential-interview-questions
+
+
+python data structures: https://dbader.org/blog/fundamental-data-structures-in-python
+
+
+
+2 simple ways of coding a linked list: https://www.youtube.com/watch?v=6sBsF13n5ig
+
+sorting, searchng and algorithm analysis in python: https://python-textbok.readthedocs.io/en/1.0/Sorting_and_Searching_Algorithms.html
+"""
+
+
+"""
 Given a integer array and a number k, output pairs that sum up to k
 """
 
@@ -238,6 +257,41 @@ iteritems() vs items() in a dictionary
 
 xrange() vs range()
 """
+
+
+"""
+Finding missing number given list of integers from 1 to n
+
+A) Sum formulae: 
+sum of 1 to n integers = n*(n+1)/2 whic is equal to sum(range(arr[0], arr[-1]+1))
+Then subtract the the elements i the array one by one 
+
+another way of doing it: https://www.w3resource.com/python-exercises/challenges/1/python-challenges-1-exercise-8.php
+"""
+
+def getMissing(arr):
+	len_of_arr_minus_one_int = len(arr)
+
+	# Find the total of the elemnets in array without missing value based on the sum formulae
+	total = (len_of_arr_minus_one_int + 1) * (len_of_arr_minus_one_int+2)/2
+
+	for elem in arr:
+		total = total - elem
+
+	return total
+
+# shorter example
+def getMissing2(arr):
+	len_of_arr = len(arr)
+	total = (len_of_arr+1)*(len_of_arr+2)/2
+
+	sum_of_arr = sum(arr)
+
+	return total-sum_of_arr
+
+print("####3")
+print(getMissing([1,2,3,5]))
+print(getMissing2([1,2,3,5]))
 
 
 
