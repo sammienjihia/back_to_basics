@@ -14,6 +14,10 @@ python data structures: https://dbader.org/blog/fundamental-data-structures-in-p
 2 simple ways of coding a linked list: https://www.youtube.com/watch?v=6sBsF13n5ig
 
 sorting, searchng and algorithm analysis in python: https://python-textbok.readthedocs.io/en/1.0/Sorting_and_Searching_Algorithms.html
+
+
+
+Scrum vs waterfall : https://blog.flatworldsolutions.com/10-differences-agile-waterfall-methodology/
 """
 
 
