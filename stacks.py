@@ -13,6 +13,12 @@ arr.append('x')
 # Remove item from stack
 arr.pop()
 
+# Return the top most item in the stack
+#arr[len(arr)-1]
+
+# Return the number of items in the stack
+len(arr)
+
 class Stack():
 	def __init__(self):
 		self.items = []
@@ -52,3 +58,74 @@ some_stack.push('24')
 print(some_stack.peek())
 
 print(some_stack.len_stack())
+
+print(some_stack.pop_item())
+
+print(some_stack.len_stack())
+
+"""
+Balanced parentheses question:
+Resources used:
+
+https://www.youtube.com/watch?v=TC7apM-xGaU
+
+https://www.careercup.com/page?pid=stacks-interview-questions
+
+https://codereview.stackexchange.com/questions/180567/checking-for-balanced-brackets-in-python
+
+http://interactivepython.org/courselib/static/pythonds/BasicDS/SimpleBalancedParentheses.html
+
+https://www.youtube.com/watch?v=lVFnq4zbs-g&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV
+"""
+
+
+class Paran_checker():
+
+	def is_matched(self, item1, item2):
+		if item1 == '{' and item2 == '}':
+			return True
+
+		elif item1 == '(' and item2 == ')':
+			return True
+
+		elif item1 == '[' and item2 == ']':
+			return True
+		else:
+			return False
+
+
+	def balanced_checker(self, my_list):
+
+		is_balanced = True
+		index = 0
+		s = Stack()
+
+		while index < len(my_list) and is_balanced:
+
+			p_char = my_list[index]
+
+			if p_char in "{[(":
+				s.push(p_char)
+
+			else:
+				if s.is_empty():
+					is_balanced = False
+
+				else:
+					top = s.pop_item()
+
+					if not self.is_matched(top, p_char):
+						is_balanced = False
+
+			index += 1
+
+		if is_balanced and s.is_empty():
+			return True
+
+		else:
+			return False
+
+checker = Paran_checker()
+print(checker.balanced_checker(')'))
+
+
