@@ -8,6 +8,7 @@ enqueue
 dequeue
 is_empty
 
+
 """
 
 class Queue():
@@ -40,6 +41,10 @@ print(my_queue.size())
 """
 1. Implementing a queue using stacks
 2. Implementing a queue using a linked list
+
+
+QUESTIONS on queues
+1. https://www.geeksforgeeks.org/category/data-structures/queue/
 """
 
 
@@ -71,9 +76,43 @@ def findNthOdd(input):
 		if x == input:
 			return nth
 
+# Implementing the above using oop paradigm
+
+class FindNth():
+
+	def __init__(self):
+
+	 	self.queue_item = 1
+
+	 
+
+ 	def findnthodd(self, input):
+ 		my_queue = Queue()
+
+ 		while my_queue.size() < input :
+ 			odd_flag = self.queue_item % 2
+
+ 			if odd_flag == 1:
+ 				my_queue.enqueue(self.queue_item)
+
+			else: 
+				pass
+
+			self.queue_item += 1
+
+		for x in range(1, input+1):
+			nth_item = my_queue.dequeue()
+
+			if x == input:
+				return nth_item
+
 		
 		
 
 
 print(findNthOdd(10))
+
+the_nthOdd = FindNth()
+
+print(the_nthOdd.findnthodd(10))
 
