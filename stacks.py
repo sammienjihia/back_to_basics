@@ -19,6 +19,10 @@ arr.pop()
 # Return the number of items in the stack
 len(arr)
 
+"""
+Implementing a stack in python: http://interactivepython.org/courselib/static/pythonds/BasicDS/ImplementingaStackinPython.html
+"""
+
 class Stack():
 	def __init__(self):
 		self.items = []
@@ -76,6 +80,9 @@ https://codereview.stackexchange.com/questions/180567/checking-for-balanced-brac
 http://interactivepython.org/courselib/static/pythonds/BasicDS/SimpleBalancedParentheses.html
 
 https://www.youtube.com/watch?v=lVFnq4zbs-g&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV
+
+
+Data strucutures commonly asked questions: https://www.geeksforgeeks.org/commonly-asked-data-structure-interview-questions-set-1/
 """
 
 
@@ -127,5 +134,35 @@ class Paran_checker():
 
 checker = Paran_checker()
 print(checker.balanced_checker(')'))
+
+
+"""
+Convert integer to binary
+"""
+
+def int_to_bin_converter(integer_item):
+	s = Stack()
+
+	# divide interger by 2 and push the remainder to  stack
+
+	while integer_item > 0:
+		remainder = integer_item % 2
+		s.push(remainder)
+
+		integer_item = integer_item // 2
+
+
+	bin_num = ""
+
+	while not s.is_empty():
+		bin_item = s.pop_item()
+
+		bin_num += str(bin_item)
+
+	return bin_num
+
+
+print(int_to_bin_converter(242))
+
 
 
