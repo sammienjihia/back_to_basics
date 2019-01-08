@@ -165,4 +165,29 @@ def int_to_bin_converter(integer_item):
 print(int_to_bin_converter(242))
 
 
+"""
+Reverse a string
+"""
+
+def reverseString(input_string):
+	s = Stack()
+	reversed_str = ""
+
+	for chr in input_string:
+		s.push(chr)
+
+	while not s.is_empty():
+
+		character = s.pop_item()
+
+		reversed_str += character
+
+	return reversed_str
+
+
+print(reverseString("sammy"))
+
+
+
+
 
