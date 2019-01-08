@@ -39,7 +39,10 @@ for x in range(0, 10):
 print(my_queue.size())
 
 """
-1. Implementing a queue using stacks
+1. Implementing a queue using two stacks
+Resources: https://www.interviewcake.com/concept/java/queue
+
+
 2. Implementing a queue using a linked list
 
 
