@@ -78,6 +78,12 @@ class MaxHeap():
 		left = index * 2
 		right = index * 2 + 1
 		largest = index
+
+		"""
+		check if the number of elements in the heap is greater 
+		index: 0 1 2 3 4  5 6 
+		value: 0 1 3 7 12 3 5
+		"""
 		if len(self.heap) > left and self.heap[largest] < self.heap[left]:
 			largest = left
 		if len(self.heap) > right and self.heap[largest] < self.heap[right]:
