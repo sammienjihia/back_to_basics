@@ -53,7 +53,10 @@ while True:
 		break
 
 	currentNode = currentNode.nextNode
-
+""" 
+Kindly rivist:
+Resources used : https://www.youtube.com/watch?v=6sBsF13n5ig
+"""
 
 class LinkedList():
 
