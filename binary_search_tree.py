@@ -63,7 +63,7 @@ class BsTree:
 			return None
 
 		else:
-			self.__find(data, self.root)
+			return self.__find(data, self.root)
 
 	def __find(self, data, current_node):
 
@@ -71,17 +71,18 @@ class BsTree:
 		if data > current_node.data:
 
 			if current_node.right is None:
+				print("v")
 				return False
 
 			else:
-				self.__find(data, current_node.right)
+				return self.__find(data, current_node.right)
 
 		elif data < current_node.data:
 			if current_node.left is None:
 				return False
 
 			else: 
-				self.__find(data, current_node.left)
+				return self.__find(data, current_node.left)
 
 		else:
 			return True
@@ -101,4 +102,4 @@ bst.insert(10)
 bst.insert(9)
 
 
-print(bst.find(4))
+print(bst.find(6))
