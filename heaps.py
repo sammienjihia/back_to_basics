@@ -95,3 +95,26 @@ class MaxHeap():
 my_heap = MaxHeap([1,3,7,12,3,5])
 
 print("aaaa"+str(my_heap.pop()))
+
+
+
+
+########### Creating a MaxHeap again###############
+
+class MaxHeap():
+	# constructor that accepts a list of items
+	def __init__(self, items=[]):
+		# initialise the heap with a 0 element in the 0th index in the array
+		self.heap = [0]
+
+		# if class initialised with an array of items, then add the items in the heap strategically
+		for item in items:
+			self.heap.append(item)
+			# floatUP the last element in the heap: NB use the index of the last item in the heap
+			self.__floatUp(len(self.heap)-1)
+
+	# insert element in the heap
+	def insertElems(self)
+
+	# pop max element in the heap
+
