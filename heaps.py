@@ -114,7 +114,11 @@ class MaxHeap():
 			self.__floatUp(len(self.heap)-1)
 
 	# insert element in the heap
-	def insertElems(self)
+	def insertElems(self, item):
+		self.heap.append(item)
+		self.__floatUp(len(self.heap)-1)
 
 	# pop max element in the heap
+
+	# implement __floatUp() private function
 
