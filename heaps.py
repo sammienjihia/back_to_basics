@@ -95,13 +95,15 @@ class MaxHeap():
 my_heap = MaxHeap([1,3,7,12,3,5])
 
 print("aaaa"+str(my_heap.pop()))
+print("bbbb"+str(my_heap.pop()))
+print("cccc"+str(my_heap.pop()))
 
 
 
 
 ########### Creating a MaxHeap again###############
 
-class MaxHeap():
+class MaxHeap2():
 	# constructor that accepts a list of items
 	def __init__(self, items=[]):
 		# initialise the heap with a 0 element in the 0th index in the array
@@ -113,12 +115,103 @@ class MaxHeap():
 			# floatUP the last element in the heap: NB use the index of the last item in the heap
 			self.__floatUp(len(self.heap)-1)
 
-	# insert element in the heap
-	def insertElems(self, item):
+	# insert element in the heap. insertion takes a time complexity of O(log n) due to the float up function.
+	# it also takes a space complexity of O (n)
+	def insertElem(self, item):
 		self.heap.append(item)
 		self.__floatUp(len(self.heap)-1)
 
+	# peek the max heap: Takes a time complexity of O(1)
+	def peek(self):
+		# check if the heap has an item
+
+		if self.heap[1]:
+			max  = self.heap[1]
+			return max
+		else:
+			return None
+
 	# pop max element in the heap
 
-	# implement __floatUp() private function
+	def popElem(self):
+		"""
+		3 scenarios here, 
+		1: the heap might be empty, 
+		2: the heap might only have one item excluding the item 
+		   in the 0th index
+		3: the heap might have more than one item excludin the item in the 0th index
 
+		"""
+		# Scenario 1: the heap might be empty
+
+		if len(self.heap) == 1:
+			max = None
+			return max
+
+		# Scenario 2: the heap might only have one item excluding the item in the 0th index
+
+		elif len(self.heap) == 2:
+			max = self.heap.pop()
+			return max
+
+		else:
+			# swap the top element and the last element in the heap
+			# this function accepts the indeces of the top element and the last element in the heap
+			self.__swap(1, len(self.heap)-1)
+			max = self.heap.pop()
+			self.__bubbleDown(1)
+
+			return max
+
+	# implement __swap() private function
+	def __swap(self, i, j):
+		self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
+
+
+	# implement __floatUp() private function
+	def __floatUp(self, index):
+		parent = index//2
+
+		if index <=1 :
+			return
+		else:
+			if self.heap[parent] < self.heap[index]:
+				self.__swap(parent, index)
+				self.__floatUp(parent)
+
+		"""
+		two scenarios, 
+		1: index we pass in is the index of the first element of the heap
+		2: heap has more than one item, excluding the 
+
+		"""
+
+
+	# implement __bubbleDown() private function
+
+	def __bubbleDown(self, index):
+		left  = index * 2
+		right = index * 2 + 1
+		largest = 0
+
+
+		# if we shall bubble down to the left, then ensure the length of the heap is greater than 
+		# the index of the left child
+		if len(self.heap) > left and self.heap[left] > self.heap[index]:
+			largest = left
+		if len(self.heap) > right and self.heap[right] > self.heap[largest]:
+			largest = right
+
+		if largest != 0:
+			self.__swap(index, largest)
+			self.__bubbleDown(largest)
+
+
+
+my_heap2 = MaxHeap2([1,3,7,12,3,5])
+
+print("cccc"+str(my_heap2.popElem()))
+print("dddd"+str(my_heap2.popElem()))
+print("eeee"+str(my_heap2.popElem()))
+print("ffff"+str(my_heap2.popElem()))
+print("gggg"+str(my_heap2.popElem()))
