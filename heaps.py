@@ -67,7 +67,7 @@ class MaxHeap():
 
 		# if the parent(which is an index) is zero, it means the heap is empty
 		# if the parent is one then 
-		if parent <=1:
+		if index <=1:
 			return
 
 		elif self.heap[index] > self.heap[parent]:
@@ -97,6 +97,9 @@ my_heap = MaxHeap([1,3,7,12,3,5])
 print("aaaa"+str(my_heap.pop()))
 print("bbbb"+str(my_heap.pop()))
 print("cccc"+str(my_heap.pop()))
+print("dddd"+str(my_heap.pop()))
+print("eeee"+str(my_heap.pop()))
+print("ffff"+str(my_heap.pop()))
 
 
 
