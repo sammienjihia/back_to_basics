@@ -79,4 +79,90 @@ class LinkedList():
 			currentNode = currentNode.nextNode
 
 		
+
+
+# ******************* LINKED LIST ***********************
+"""
+Resources used: https://www.youtube.com/watch?v=FSsriWQ0qYE&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=5
+"""
+
+class Node():
+	# creating a node   new_node = Node(data)
+
+	def __init__(self, data):
+		self.data = data
+		self.next_node = None
+
+
+class LinkedList():
+
+	def __init__(self):
+		self.head = None
+
+	def print_nodeData(self):
+
+		current_node = self.head
+
+		while current_node != None :
+			print(current_node.data)
+			current_node = current_node.next_node
+
+		# The head is a pointer to a node in the linke list 
+
+
+
+	# adding a node to a the end of the LinkedList// basically appending a new node
+
+	# llist = LinkedList()
+	# llist.append_data(1)
+	# llist.append_data(2)
+	# llist.append_data(3)
+	# 1 --> 2 --> 3 
+
+	def append_data(self, data):
+		new_node = Node(data)
+
+		# first check if the LinkedList is empty, check if the head pointer is pointing to None
+		if self.head is None:
+			self.head = new_node
+			return
+
+		# so move the head pointer to the end of the list until the end of the 
+		last_node = self.head
+
+		while last_node.next_node != None:
+			last_node = last_node.next_node
+
+		last_node.next_node = new_node
+
+
+llist = LinkedList()
+llist.append_data(1)
+llist.append_data(2)
+llist.append_data(3)
+llist.print_nodeData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
