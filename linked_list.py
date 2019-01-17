@@ -113,11 +113,6 @@ class LinkedList():
 
 	# adding a node to a the end of the LinkedList// basically appending a new node
 
-	# llist = LinkedList()
-	# llist.append_data(1)
-	# llist.append_data(2)
-	# llist.append_data(3)
-	# 1 --> 2 --> 3 
 
 	def append_data(self, data):
 		new_node = Node(data)
@@ -135,11 +130,25 @@ class LinkedList():
 
 		last_node.next_node = new_node
 
+	def prepend_data(self, data):
+		new_node = Node(data)
+
+		if self.head is None:
+			self.head = new_node
+			return
+
+		new_node.next_node = self.head
+		self.head = new_node  
+
+
+
 
 llist = LinkedList()
-llist.append_data(1)
-llist.append_data(2)
-llist.append_data(3)
+# llist.append_data(1)
+# llist.append_data(2)
+# llist.append_data(3)
+llist.prepend_data(4)
+llist.prepend_data(5)
 llist.print_nodeData()
 
 
