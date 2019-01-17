@@ -140,15 +140,37 @@ class LinkedList():
 		new_node.next_node = self.head
 		self.head = new_node  
 
+	def insert_data(self, data, targetNode):
+		new_node = Node(data)
+
+		current_node = self.head
+
+		while current_node.data != targetNode:
+			current_node = current_node.next_node
+			# by end of this loop, the current node shall be the target node
+
+		targetNode2 = current_node.next_node
+
+		current_node.next_node = new_node
+
+		new_node.next_node = targetNode2
+
+
+			
+
+
+
 
 
 
 llist = LinkedList()
 # llist.append_data(1)
-# llist.append_data(2)
-# llist.append_data(3)
-llist.prepend_data(4)
-llist.prepend_data(5)
+llist.append_data(2)
+llist.append_data(3)
+llist.append_data(4)
+llist.append_data(5)
+llist.append_data(6)
+llist.insert_data(7, 4)
 llist.print_nodeData()
 
 
