@@ -60,3 +60,33 @@ def quick_sort(arr):
 quick_sort([1,4,2,6,4,9,5,8])
 
 
+
+####################
+
+def partition(arr, k):
+
+  left, right = 0, len(arr)-1
+
+  traverse = 0
+
+  while traverse < right:
+
+    while arr[traverse] < k:
+
+      arr[left], arr[traverse] = arr[traverse], arr[left]
+
+      left += 1
+
+    while arr[traverse] > k :
+      arr[right], arr[traverse] = arr[traverse], arr[right]
+
+      right -= 1
+      
+    traverse += 1
+
+    return arr
+
+
+print(partition([1,2,8,4,7,6,2,4,8,5,9,2], 6))
+
+
