@@ -145,15 +145,21 @@ class LinkedList():
 
 		current_node = self.head
 
-		while current_node.data != targetNode:
+		while current_node.data != targetNode and current_node.next_node != None:
 			current_node = current_node.next_node
 			# by end of this loop, the current node shall be the target node
+		print("current node is {}".format(current_node.data))
 
-		targetNode2 = current_node.next_node
+		if current_node.data == targetNode:
 
-		current_node.next_node = new_node
+			targetNode2 = current_node.next_node
 
-		new_node.next_node = targetNode2
+			current_node.next_node = new_node
+
+			new_node.next_node = targetNode2
+
+		else:
+			print("Taget node {} not in the linked list".format(targetNode))
 
 
 			
@@ -170,7 +176,7 @@ llist.append_data(3)
 llist.append_data(4)
 llist.append_data(5)
 llist.append_data(6)
-llist.insert_data(7, 4)
+llist.insert_data(7, 20)
 llist.print_nodeData()
 
 
