@@ -84,6 +84,8 @@ class LinkedList():
 # ******************* LINKED LIST ***********************
 """
 Resources used: https://www.youtube.com/watch?v=FSsriWQ0qYE&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=5
+
+Resources used: https://bradfieldcs.com/algos/lists/implementing-an-ordered-list/
 """
 
 class Node():
