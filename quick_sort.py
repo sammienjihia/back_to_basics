@@ -87,6 +87,48 @@ def partition(arr, k):
     return arr
 
 
-print(partition([1,2,8,4,7,6,2,4,8,5,9,2], 6))
+print(partition([1,2,8,4,7,6, 2,4,8,5,9,2], 6))
+
+
+
+# question 1, shall the array have repeating integers
+def partition_correct(arr, k):
+
+  left = 0
+  right = len(arr)-1
+
+  while left != right :
+
+    # left elements should be less than k
+    if arr[left] < k:
+      left += 1
+
+    # right elements should be greater than or equal to k
+
+    if arr[right] >= k:
+      right -= 1
+
+    if left>=right :
+      return arr
+
+    arr[left], arr[right] = arr[right], arr[left]
+
+  # while left != right:
+  #   if arr[left] == k:
+  #     left_outer = left - 1
+  #     left_inner = left + 1
+
+  #     if 
+
+  
+
+  return arr
+
+print(partition_correct([1,2,6, 8,6,4,7,6, 2,4,8,5,9,6,2], 6))
+
+
+
+
+
 
 
