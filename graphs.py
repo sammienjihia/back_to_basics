@@ -50,7 +50,7 @@ class Graph:
 	def add_edge(self, node1, node2):
 		# first check if both nodes are in the nodes dictionary
 
-		if node1 in self.nodes and node2 in self.nodes:
+		if node1.value in self.nodes and node2.value in self.nodes:
 			for key, value in self.nodes.items():
 				if key == node1.value:
 					value.add_neighbours(node1)
@@ -88,15 +88,19 @@ node3.add_neighbours(node2)
 
 node3.add_neighbours(node1)
 
+print("************* adding a node *******************")
 print(g.add_node(node1))
 print(g.add_node(node2))
 print(g.add_node(node3))
-
+print("***************** adding a node")
+print(" ")
+print("############# adding an edge ##########")
 print(g.add_edge(node1, node2))
 print(g.add_edge(node1, node3))
 print(g.add_edge(node3, node2))
+print("########### adding an edge ###########3")
 
-print(g.print_graph())
+(g.print_graph())
 
 
 
