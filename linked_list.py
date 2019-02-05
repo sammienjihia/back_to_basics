@@ -164,6 +164,91 @@ class LinkedList():
 			print("Taget node {} not in the linked list".format(targetNode))
 
 
+	# The problem to this solution is that, swapping consequtive nodes will run forever
+
+	def NodeSwap(self, node1, node2):
+
+		# initialize the target nodes
+
+		target1 = None
+		target2 = None
+
+		# if the inputs are simillar, then exit, cannot swap simillar objects
+
+		if node1 == node2:
+			msg = "Inputs are simillar, cannot swap"
+			return msg
+
+		
+		current_node = self.head
+
+		# check if linked list is empty
+		if current_node is None:
+			msg = "Linked list is empty"
+			return msg
+
+		# Check if there's only one node in the linked list
+		if current_node.next_node is None:
+			msg = "Linked list has only one node"
+			return msg
+
+		# check if the head node's data is either node1 or node2
+		if current_node.data == node1:
+			prev1 = None
+			target1 = current_node
+			next1 = target1.next_node
+
+		if current_node.data == node2:
+			prev2 = None
+			target2 = current_node
+			next2 = target2.next_node
+
+
+		while current_node.next_node is not None:
+			print("$$$$$$$$$$$$$$$$$$$")
+
+			if current_node.next_node.data == node1:
+				prev1 = current_node
+				target1 = current_node.next_node
+				next1 = target1.next_node 
+				print("###############")
+
+			if current_node.next_node.data == node2:
+				prev2 = current_node
+				target2 = current_node.next_node
+				next2 = target2.next_node
+				print("@@@@@@@@@@@@@@@@@@@")
+
+
+			current_node = current_node.next_node
+
+		# check if the inputs are present in the linked list
+		if target1 and target2:
+			# print(prev1, target1.data, next1.data, prev2.data, target2.data, next2.data)
+			# prev1 to point to target2
+
+			if prev1 == None:
+				self.head = target2
+			else:
+				prev1.next_node = target2
+			# target2 to point to next1
+			# target2.next_node = next1
+			# prev2 to point to target1
+			if prev2 ==None:
+				self.head = target1
+			else:
+				prev2.next_node = target1
+			# target1 to point to next2
+			# target1.next_node = next2
+			
+			target1.next_node, target2.next_node = target2.next_node, target1.next_node
+			
+		else:
+			msg = "One or both inputs are not present in the linked list"
+			return msg
+
+
+
 			
 
 
@@ -172,14 +257,15 @@ class LinkedList():
 
 
 llist = LinkedList()
-# llist.append_data(1)
+llist.append_data(1)
 llist.append_data(2)
 llist.append_data(3)
 llist.append_data(4)
 llist.append_data(5)
 llist.append_data(6)
-llist.insert_data(7, 20)
-llist.print_nodeData()
+llist.NodeSwap(1,5)
+print(llist.insert_data(7, 4))
+print(llist.print_nodeData())
 
 
 
