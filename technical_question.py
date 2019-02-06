@@ -298,6 +298,76 @@ print(getMissing([1,2,3,5]))
 print(getMissing2([1,2,3,5]))
 
 
+"""
+Cracking the coding inteverview Example question Pg 79
+Given an array of integers, count the number of pairs of integers that have a difference k
+Ex arr = [1,7,5,9,2,12,3] and k=2   there are 4 pairs with difference 2 : (1,3) (3,5), (5,7), (7,9) 
+"""
+
+# Example
+"""
+for every element find the total between the elemnt and the difference, then search for the total in the array
+
+Elem 1 
+1+2 = 3 // Search for three in the array
+
+Elem 2 
+2+2 = 4 // Search for 4 in the array
+
+Elem 3
+3+2 = 5 // Search for 5 in the array
+
+
+....
+
+and so on
+
+So run time shall be n (iterating through every elemnt in the array) by n (iterating through the array searching for thr total)
+
+Time Complexity O(n*n) = O(n2)
+
+#Optimize
+
+if we sort thr array (n Log n) and use binary serach to search for the total in the array (n Log n) we can reduce the 
+time complexity to 2(n Log n)
+
+"""
+class Problem1:
+	def __init__(self, k, arr):
+		self.arr = arr
+		self.k = k
+
+	def getTotal(self):
+		dic = {}
+
+		for n in self.arr:
+			w = n+self.k
+
+			dic[w] = (n,w)
+
+		return dic
+
+	def getAns(self):
+
+		ans = []
+		dic_of_totals = self.getTotal()
+
+		for n in self.arr:
+			if n in dic_of_totals:
+				ans.append(dic_of_totals[n])
+
+
+		return ans
+
+print("******************************")
+
+prob = Problem1(2, [1,7,5,9,2,12,3])
+print(prob.getAns())
+
+
+
+		
+
 
 
 
