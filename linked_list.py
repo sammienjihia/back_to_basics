@@ -248,6 +248,7 @@ class LinkedList():
 			return msg
 
 
+	
 
 			
 
@@ -263,8 +264,9 @@ llist.append_data(3)
 llist.append_data(4)
 llist.append_data(5)
 llist.append_data(6)
-llist.NodeSwap(1,5)
-print(llist.insert_data(7, 4))
+print(llist.print_nodeData())
+# llist.NodeSwap(1,5)
+# print(llist.insert_data(7, 4))
 print(llist.print_nodeData())
 
 
