@@ -196,12 +196,12 @@ class LinkedList():
 		if current_node.data == node1:
 			prev1 = None
 			target1 = current_node
-			next1 = target1.next_node
+			
 
 		if current_node.data == node2:
 			prev2 = None
 			target2 = current_node
-			next2 = target2.next_node
+			
 
 
 		while current_node.next_node is not None:
@@ -210,15 +210,11 @@ class LinkedList():
 			if current_node.next_node.data == node1:
 				prev1 = current_node
 				target1 = current_node.next_node
-				next1 = target1.next_node 
-				print("###############")
-
+				
 			if current_node.next_node.data == node2:
 				prev2 = current_node
 				target2 = current_node.next_node
-				next2 = target2.next_node
-				print("@@@@@@@@@@@@@@@@@@@")
-
+				
 
 			current_node = current_node.next_node
 
@@ -247,6 +243,34 @@ class LinkedList():
 			msg = "One or both inputs are not present in the linked list"
 			return msg
 
+	# iterative method
+	def reverseLinkedList(self):
+
+		# check if linke dlist is empty
+		current_node = self.head
+		if current_node is None:
+			msg = "Linked list is empty"
+			return msg
+
+		#check if linked list has only one node
+		if current_node.next_node is None:
+			msg="Cannot reverse a linked list with a single node"
+			return msg
+
+		prev = None
+
+
+		while current_node.next_node is not None:
+			nxt = current_node.next_node
+			current_node.next_node = prev
+			prev = current_node
+			current_node = nxt
+			
+		current_node.next_node = prev
+		self.head = current_node
+
+			
+
 
 	
 
@@ -265,8 +289,9 @@ llist.append_data(4)
 llist.append_data(5)
 llist.append_data(6)
 print(llist.print_nodeData())
-# llist.NodeSwap(1,5)
+# print(llist.NodeSwap(6,7))
 # print(llist.insert_data(7, 4))
+llist.reverseLinkedList()
 print(llist.print_nodeData())
 
 
