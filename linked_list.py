@@ -269,6 +269,36 @@ class LinkedList():
 		current_node.next_node = prev
 		self.head = current_node
 
+	def reversedLinked2(self):
+
+		#check if linked list is empty
+		current_node = self.head
+
+		if current_node is None:
+			msg="Linked list is empty"
+			return msg
+
+		# check if linked list has more than one node
+		if current_node.next_node is None:
+			msg="Linked list has only one node"
+			return msg
+
+		prev = None
+
+		while current_node.next_node is not None:
+			nxt = current_node.next_node
+			current_node.next_node = prev
+			
+			#increament previous pointer
+			prev = current_node
+			#increament linked list pointer
+			current_node = nxt
+
+		self.head = current_node
+		current_node.next_node = prev
+
+
+
 			
 
 
@@ -291,7 +321,8 @@ llist.append_data(6)
 print(llist.print_nodeData())
 # print(llist.NodeSwap(6,7))
 # print(llist.insert_data(7, 4))
-llist.reverseLinkedList()
+# llist.reverseLinkedList()
+llist.reversedLinked2()
 print(llist.print_nodeData())
 
 
