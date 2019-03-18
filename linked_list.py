@@ -297,6 +297,54 @@ class LinkedList():
 		self.head = current_node
 		current_node.next_node = prev
 
+	# REVERSED SINGLY LINKED LIST AS A RECURSIVE FUNCTION
+	def reverseLinkedListRecursive(self):
+
+		#check if linked list is empty
+		if self.head is None:
+			msg = "Canot reverse an empty linked list"
+			return msg
+
+		current_node = self.head
+		if current_node.next_node is None:
+		 	msg = "This linked list has only one node. Cannot reverse"
+		 	return msg
+
+	 	prev = None
+
+	 	# call recursive function here
+
+	 	current_node, prev = self._recursiveFunction(current_node, prev)
+	 	self.head = current_node
+	 	current_node.next_node = prev
+	 	
+	 	
+
+
+
+ 	def _recursiveFunction(self, current_node, prev):
+
+ 		if current_node.next_node is None:
+ 			return (current_node, prev)
+ 		else:
+ 			# capture next node on a temp variable
+ 			nxt = current_node.next_node
+
+ 			# convert the next pointer to point to the previous node
+ 			current_node.next_node = prev
+
+ 			# move prev pointer and current node pointer to their next respective positions
+ 			prev = current_node
+ 			current_node = nxt
+ 			return self._recursiveFunction(current_node, prev)
+
+
+
+
+
+ 		
+
+
 
 
 			
@@ -318,11 +366,12 @@ llist.append_data(3)
 llist.append_data(4)
 llist.append_data(5)
 llist.append_data(6)
-print(llist.print_nodeData())
+# print(llist.print_nodeData())
 # print(llist.NodeSwap(6,7))
 # print(llist.insert_data(7, 4))
 # llist.reverseLinkedList()
-llist.reversedLinked2()
+# llist.reversedLinked2()
+llist.reverseLinkedListRecursive()
 print(llist.print_nodeData())
 
 
