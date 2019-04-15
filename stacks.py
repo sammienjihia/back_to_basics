@@ -187,7 +187,7 @@ def reverseString(input_string):
 
 print(reverseString("sammy"))
 
-
+# Made some changes on this code from the mac computer
 
 
 
